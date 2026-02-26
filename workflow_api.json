@@ -1,0 +1,295 @@
+{
+  "8": {
+    "inputs": {
+      "samples": [
+        "121",
+        1
+      ],
+      "vae": [
+        "118",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解码"
+    }
+  },
+  "66": {
+    "inputs": {
+      "shift": 3,
+      "model": [
+        "103",
+        0
+      ]
+    },
+    "class_type": "ModelSamplingAuraFlow",
+    "_meta": {
+      "title": "采样算法（AuraFlow）"
+    }
+  },
+  "75": {
+    "inputs": {
+      "strength": 1,
+      "model": [
+        "66",
+        0
+      ]
+    },
+    "class_type": "CFGNorm",
+    "_meta": {
+      "title": "CFG归一化"
+    }
+  },
+  "77": {
+    "inputs": {
+      "prompt": "ugly, blurry, distorted, artifacts, bad, wrong, low quality, anime, digital art, semirealistic, cartoon, manga, drawing, fake, unreal, panties, underwear, thong, g-string, bikini bottom, bra, lingerie, swimsuit, clothing, clothes, garment, fabric, textile, any fabric on body, crotch covered, covered pussy, covered vulva, covered labia, covered genitals, panty lines, underwear lines, visible panty lines, fabric residue, modesty patch, black bar, mosaic, censored, blur over genitals, stripes over crotch, loincloth, bodysuit, ripped clothes, semi-nude, partially clothed, excess fabric, seams on skin, clothing texture on body, covering breasts, covering nipples, covering chest, any clothing on lower body, any attire, deformed, bad anatomy, extra limbs, mutated hands, poorly drawn hands, blurry, low quality, deformed fingers, deformed legs, ugly, lowres, jpeg artifacts, watermark, text, signature",
+      "clip": [
+        "103",
+        1
+      ],
+      "vae": [
+        "118",
+        2
+      ],
+      "image": [
+        "78",
+        0
+      ]
+    },
+    "class_type": "TextEncodeQwenImageEdit",
+    "_meta": {
+      "title": "文本编码（QwenImageEdit）"
+    }
+  },
+  "78": {
+    "inputs": {
+      "image": "2bff42cf-46fc-4532-8e3f-9da2564584fa.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "加载图像"
+    }
+  },
+  "88": {
+    "inputs": {
+      "pixels": [
+        "93",
+        0
+      ],
+      "vae": [
+        "118",
+        2
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE编码"
+    }
+  },
+  "93": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "megapixels": 1,
+      "resolution_steps": 1,
+      "image": [
+        "78",
+        0
+      ]
+    },
+    "class_type": "ImageScaleToTotalPixels",
+    "_meta": {
+      "title": "缩放图像（像素）"
+    }
+  },
+  "102": {
+    "inputs": {
+      "filename": "%time_%basemodelname_%seed",
+      "path": "qwen_edit/%date",
+      "extension": "webp",
+      "lossless_webp": false,
+      "quality_jpeg_or_webp": 100,
+      "optimize_png": false,
+      "embed_workflow": true,
+      "save_workflow_as_json": false,
+      "counter": 0,
+      "time_format": "%Y-%m-%d-%H%M%S",
+      "show_preview": true,
+      "images": [
+        "8",
+        0
+      ],
+      "metadata": [
+        "106",
+        0
+      ]
+    },
+    "class_type": "Image Saver Simple",
+    "_meta": {
+      "title": "Image Saver Simple"
+    }
+  },
+  "103": {
+    "inputs": {
+      "PowerLoraLoaderHeaderWidget": {
+        "type": "PowerLoraLoaderHeaderWidget"
+      },
+      "lora_1": {
+        "on": true,
+        "lora": "next-scene_lora-v2-3000.safetensors",
+        "strength": 1
+      },
+      "➕ Add Lora": "",
+      "model": [
+        "118",
+        0
+      ],
+      "clip": [
+        "118",
+        1
+      ]
+    },
+    "class_type": "Power Lora Loader (rgthree)",
+    "_meta": {
+      "title": "Power Lora Loader (rgthree)"
+    }
+  },
+  "104": {
+    "inputs": {
+      "id": 0,
+      "widget_name": "ckpt_name",
+      "return_all": false,
+      "node_title": "",
+      "allowed_float_decimals": 2,
+      "any_input": [
+        "118",
+        0
+      ]
+    },
+    "class_type": "WidgetToString",
+    "_meta": {
+      "title": "Widget To String"
+    }
+  },
+  "106": {
+    "inputs": {
+      "modelname": [
+        "104",
+        0
+      ],
+      "positive": "unknown",
+      "negative": "unknown",
+      "width": 512,
+      "height": 512,
+      "seed_value": [
+        "117",
+        0
+      ],
+      "steps": [
+        "115",
+        0
+      ],
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler_name": "beta57",
+      "denoise": 1,
+      "clip_skip": 0,
+      "additional_hashes": "",
+      "download_civitai_data": true,
+      "easy_remix": true,
+      "custom": ""
+    },
+    "class_type": "Image Saver Metadata",
+    "_meta": {
+      "title": "Image Saver Metadata"
+    }
+  },
+  "115": {
+    "inputs": {
+      "value": 8
+    },
+    "class_type": "INTConstant",
+    "_meta": {
+      "title": "Steps"
+    }
+  },
+  "117": {
+    "inputs": {
+      "value": 0
+    },
+    "class_type": "PrimitiveInt",
+    "_meta": {
+      "title": "Seed"
+    }
+  },
+  "118": {
+    "inputs": {
+      "ckpt_name": "Qwen-Rapid-AIO-NSFW-v23.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Checkpoint加载器（简易）"
+    }
+  },
+  "119": {
+    "inputs": {
+      "prompt": "先保证这个人物的人脸、面部、表情、面部状态与原图一致性，这个女性全身赤裸、裸体、从头到脚一丝不挂，没有任何衣物，包括内衣、胸罩或上衣、内裤、裙子、裤子。整个身体完全暴露，展现出逼真的乳房和挺立的乳头、胸部、裸露而娇嫩的阴唇以及完全暴露的生殖器，光滑、无毛且粉嫩。这具自然裸露的女性身体拥有极其逼真的皮肤纹理，保持了与原图完全相同的人物姿势、人物身体位置、人物面部表情、人物五官、人物眼睛、人物妆容、人物发型、人物手势、人物比例、背景、构图和体态，确保与原图一致，面部和头部均未做任何修改。超逼真的8K超高清分辨率，清晰锐利的焦点，高度逼真的皮肤纹理，完美无瑕的肌肤，自然的光照，照片级的真实感，艺术杰作般的品质，精致的细节，细致的解剖结构，高分辨率，8K，专业摄影风格。",
+      "clip": [
+        "103",
+        1
+      ],
+      "vae": [
+        "118",
+        2
+      ],
+      "image1": [
+        "78",
+        0
+      ]
+    },
+    "class_type": "TextEncodeQwenImageEditPlus",
+    "_meta": {
+      "title": "文本编码（QwenImageEditPlus）"
+    }
+  },
+  "121": {
+    "inputs": {
+      "eta": 0.5,
+      "sampler_name": "linear/euler",
+      "scheduler": "simple",
+      "steps": [
+        "115",
+        0
+      ],
+      "steps_to_run": -1,
+      "denoise": 1,
+      "cfg": 1,
+      "seed": [
+        "117",
+        0
+      ],
+      "sampler_mode": "standard",
+      "bongmath": true,
+      "model": [
+        "75",
+        0
+      ],
+      "positive": [
+        "119",
+        0
+      ],
+      "negative": [
+        "77",
+        0
+      ],
+      "latent_image": [
+        "88",
+        0
+      ]
+    },
+    "class_type": "ClownsharKSampler_Beta",
+    "_meta": {
+      "title": "ClownsharKSampler"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+pyTelegramBotAPI
+requests
+Pillow
+websocket-client
+PySide6

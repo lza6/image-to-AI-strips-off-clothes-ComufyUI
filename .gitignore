@@ -1,0 +1,93 @@
+# Python相关
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# 虚拟环境
+venv/
+env/
+ENV/
+.venv
+.env
+
+# IDE相关
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 操作系统相关
+Thumbs.db
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Icon?
+
+# 项目特定文件
+# 敏感配置文件
+config.py
+settings.py
+.env
+*.env
+
+# 运行时生成的文件
+*.log
+debug_last_sent.json
+bot_stats.json
+
+# ComfyUI相关
+input/
+output/
+temp/
+
+# 缓存文件
+*.tmp
+*.temp
+.cache/
+
+# 数据库文件
+*.db
+*.sqlite
+*.sqlite3
+
+# 媒体文件（如果有的话）
+*.jpg
+*.png
+*.gif
+*.mp4
+*.avi
+
+# 压缩文件
+*.zip
+*.rar
+*.7z
+*.tar.gz
+
+# 其他可能的敏感文件
+secrets.json
+credentials.json
+token.txt
+password.txt
