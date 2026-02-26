@@ -35,7 +35,7 @@ from PySide6.QtCore import QThread, Signal, Slot, Qt, QTimer
 from PySide6.QtGui import QFont, QColor, QTextCursor
 
 # ================= 配置区域 =================
-BOT_TOKEN = '8678143396:AAHfZ-zMc8hrjbAz_QAt0yMAFWsE-huRAtM'
+BOT_TOKEN = '你的机器人token填在这里'
 COMFYUI_SERVER = "127.0.0.1:8000"  
 COMFYUI_DIR = r"D:\C" 
 API_WORKFLOW_FILE = "workflow_api.json"
