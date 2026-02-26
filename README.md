@@ -34,7 +34,7 @@ pip install -r requirements.txt
 3. 按提示输入bot名称和用户名
 4. 获取到类似这样的Token：
    ```
-   8678143396:AAHfZ-zMc8hrjbAz_QAt0yMAFWsE-huRAtM
+   8678.............6:AAHfZ-..........................
    ```
 
 #### 2. 配置Bot Token
